@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+main h3 {
+    border: 1px solid rgba(128, 128, 128, 0.384);
+    padding: 0px 8px;
+    border-radius: 16px;
+    margin-bottom: 8px;
+    transition: background-color 1s linear;
+    cursor: pointer;
+}
+main h3:hover {
+    background-color: aliceblue;
+}
+main p {
+    height: 0px;
+    padding: 0px 8px;
+    overflow: hidden;
+    transition: all 1s linear; 
+}
+
+.active {
+    height: 50px;
+}
