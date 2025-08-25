@@ -1,0 +1,21 @@
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+main h3 {
+    border: 1px solid rgba(128, 128, 128, 0.384);
+    padding: 0px 8px;
+    border-radius: 16px;
+    margin-bottom: 8px;
+}
+main p {
+    height: 0px;
+    padding: 0px 8px;
+    overflow: hidden;
+    transition: all 1s linear; 
+}
+
+.active {
+    height: 50px;
+}
