@@ -1,13 +1,24 @@
-const toggleBtn = document.getElementById("toggleMessage");
+// Validacija forme
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); 
 
-toggleBtn.addEventListener("click", function () {
-  if (messageField.style.display === "none") {
-    // ako je skrivena, pokaži
-    messageField.style.display = "block";
-    toggleBtn.textContent = "Sakrij poruku";
-  } else {
-    // ako je prikazana, sakrij
-    messageField.style.display = "none";
-    toggleBtn.textContent = "Prikaži poruku";
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = messageField.value;
+
+  if (name === "" || email === "" || message === "") {
+    result.textContent = "Sva polja moraju biti popunjena.";
+    result.style.color = "red";
+    return;
   }
+
+  if (email.indexOf("@") === -1) {
+    result.textContent = "Email mora sadržavati @.";
+    result.style.color = "red";
+    return;
+  }
+
+  result.textContent = "Poruka je poslana.";
+  result.style.color = "green";
+  form.reset();
 });
