@@ -8,6 +8,11 @@ main h3 {
     padding: 0px 8px;
     border-radius: 16px;
     margin-bottom: 8px;
+    transition: background-color 1s linear;
+    cursor: pointer;
+}
+main h3:hover {
+    background-color: aliceblue;
 }
 main p {
     height: 0px;
