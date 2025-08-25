@@ -1,24 +1,21 @@
 // Validacija forme
 form.addEventListener("submit", function (e) {
-  e.preventDefault(); 
+  e.preventDefault(); // spriječi reload stranice
 
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
   const message = messageField.value;
 
   if (name === "" || email === "" || message === "") {
-    result.textContent = "Sva polja moraju biti popunjena.";
-    result.style.color = "red";
+    alert("Sva polja moraju biti popunjena.");
     return;
   }
 
   if (email.indexOf("@") === -1) {
-    result.textContent = "Email mora sadržavati @.";
-    result.style.color = "red";
+    alert("Email mora sadržavati @.");
     return;
   }
 
-  result.textContent = "Poruka je poslana.";
-  result.style.color = "green";
+  alert("Poruka je poslana.");
   form.reset();
 });
