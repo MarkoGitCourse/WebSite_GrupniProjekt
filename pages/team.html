@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Team</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/team.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">MojaWebStranica</div>
+      <nav>
+        <ul>
+          <li><a href="about.html">O nama</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li><a href="services.html">Usluge</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="testimonials.html">Iskustva</a></li>
+          <li><a href="team.html">Naš tim</a></li>
+          <li><a href="pricing.html">Cjenik</a></li>
+          <li><a href="careers.html">Karijere</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+      <h1>Dobrodošli na naš projekt</h1>
+      <p>
+        Svaka podstranica je jedinstvena i rađena od strane drugog člana tima.
+      </p>
+    </section>
+
+    <!-- Search -->
+    <div class="search-box">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Pretraži po imenu ili ulozi..."
+      />
+    </div>
+
+    <!-- Team Members -->
+    <section class="team-container" id="teamList">
+      <div class="team-member">
+        <img src="https://placehold.co/600x400" alt="Ivana" />
+        <h3>Ivana</h3>
+        <p>Front-End Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://placehold.co/600x400" alt="Pero" />
+        <h3>Pero</h3>
+        <p>Back-End Developer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://placehold.co/600x400" alt="Marina" />
+        <h3>Marina</h3>
+        <p>UI/UX Designer</p>
+      </div>
+
+      <div class="team-member">
+        <img src="https://placehold.co/600x400" alt="Marko" />
+        <h3>Marko</h3>
+        <p>Project Manager</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 MojaWebStranica - Sva prava pridržana</p>
+    </footer>
+
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const teamList = document.getElementById("teamList");
+      const members = teamList.getElementsByClassName("team-member");
+
+      searchInput.addEventListener("keyup", function () {
+        const filter = searchInput.value.toLowerCase();
+
+        for (let i = 0; i < members.length; i++) {
+          const name = members[i]
+            .getElementsByTagName("h3")[0]
+            .textContent.toLowerCase();
+          const role = members[i]
+            .getElementsByTagName("p")[0]
+            .textContent.toLowerCase();
+
+          if (name.includes(filter) || role.includes(filter)) {
+            members[i].style.display = "";
+          } else {
+            members[i].style.display = "none";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
